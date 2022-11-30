@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardDeal = () => {
   return (
-    <div>CardDeal</div>
+    <div className="bg-white">CardDeal</div>
   )
 }
 

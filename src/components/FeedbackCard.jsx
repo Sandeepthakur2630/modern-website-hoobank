@@ -2,7 +2,7 @@ import React from 'react'
 
 const FeedbackCard = () => {
   return (
-    <div>FeedbackCard</div>
+    <div className="bg-white">FeedbackCard</div>
   )
 }
 
