@@ -3,7 +3,7 @@ import styles from "../styles";
 
 const Clients = () => (
   <section className={` my-4`}>
-    <div className={` flex-wrap w-full`}>
+    <div className={` flex flex-wrap w-full`}>
       {clients.map((client) => (
         <div
           key={client.id}
