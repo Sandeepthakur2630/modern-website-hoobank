@@ -1,68 +1,32 @@
-import React from "react";
+import { feedback } from "../constants";
+import styles from "../styles";
+import FeedbackCard from "./FeedbackCard";
 
-const Testimonials = () => {
-  return (
-    <div className="bg-white">
-      <div className="flex items-center">
-        <div>What people are saying about us</div>
-        <p>
+const Testimonials = () => (
+  <section
+    id="clients"
+    className={`${styles.paddingY} ${styles.flexCenter} flex-col relative `}
+  >
+    <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient bottom-40" />
+
+    <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
+      <h2 className={styles.heading2}>
+        What People are <br className="sm:block hidden" /> saying about us
+      </h2>
+      <div className="w-full md:mt-0 mt-6">
+        <p className={`${styles.paragraph} text-left max-w-[450px]`}>
           Everything you need to accept card payments and grow your business
           anywhere on the planet.
         </p>
       </div>
-
-      <div className="flex">
-        <div>
-          <img src="" alt="image" />
-          <p>
-            Money is only a tool. It will take you wherever you wish, but it
-            will not replace you as the driver.
-          </p>
-          <div className="flex">
-            <div>
-              <img src="" alt="profilepic" />
-            </div>
-            <div>
-              <p>Harman jonson</p>
-              <p>Founder & Leader</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <img src="" alt="image" />
-          <p>
-            Money makes your life easier. If you're lucky to have it, you're
-            lucky.
-          </p>
-          <div className="flex">
-            <div>
-              <img src="" alt="profilepic" />
-            </div>
-            <div>
-              <p>Steve Mark</p>
-              <p>Founder & Leader</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <img src="" alt="image" />
-          <p>
-            It is usually people in the money business, finance, and
-            international trade that are really rich.
-          </p>
-          <div className="flex">
-            <div>
-              <img src="" alt="profilepic" />
-            </div>
-            <div>
-              <p>Ken Gallagher</p>
-              <p>Founder & Leader</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  );
-};
+
+    <div className="flex flex-wrap sm:justify-start justify-center w-full feedback-container relative z-[1]">
+      {feedback.map((card) => (
+        <FeedbackCard key={card.id} {...card} />
+      ))}
+    </div>
+  </section>
+);
 
 export default Testimonials;
